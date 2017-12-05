@@ -13,8 +13,8 @@
     "start": "node server",
     "start-dev": "npm run build-client-watch & npm run start-server",
     "start-server": "NODE_ENV='development' nodemon server -e html,js,scss --ignore public",
-    "unit-tests": "NODE_ENV='test' DATABASE_URL='postgres://localhost:5432/raww-test' mocha -w ./tests/index.js ./tests/unit/**/*.spec.js ./tests/unit/**/**/*.spec.js --compilers js:babel-register --require babel-polyfill",
-    "end-tests": "NODE_ENV='test' DATABASE_URL='postgres://localhost:5432/raww-test' mocha ./tests/index.js ./tests/endToEnd/*.spec.js ./tests/endToEnd/**/*.spec.js ./tests/endToEnd/**/**/*.spec.js --compilers js:babel-register --require babel-polyfill"
+    "unit-tests": "NODE_ENV='test' mocha -w ./tests/index.js ./tests/unit/**/*.spec.js ./tests/unit/**/**/*.spec.js --compilers js:babel-register --require babel-polyfill",
+    "end-tests": "NODE_ENV='test' mocha ./tests/index.js ./tests/endToEnd/*.spec.js ./tests/endToEnd/**/*.spec.js ./tests/endToEnd/**/**/*.spec.js --compilers js:babel-register --require babel-polyfill"
   },
   "author": "",
   "license": "ISC",
@@ -72,7 +72,7 @@
     "eslint-plugin-react": "^6.10.3",
     "file-loader": "^0.11.2",
     "mocha": "^3.3.0",
-    "node-sass": "^4.5.0",
+    "nodemon": "1.11.0",
     "prettier": "^1.3.1",
     "prettier-eslint": "^6.2.0",
     "react-test-renderer": "^15.6.1",
